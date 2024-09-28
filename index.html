@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gerador de Senha</title>
+        <!-- link tailwindcss -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- link ionicons -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </head>
+
+    <body>
+        <!-- navbar -->
+            <nav class="bg-gray-800">
+                <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                    <div class="relative flex h-16 items-center justify-between">
+                        
+                        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                            
+                            <!-- icone -->
+                            <div class="flex flex-shrink-0 items-center text-white">
+                                <ion-icon name="balloon-outline" size="large"></ion-icon>
+                            </div>
+                            
+                            <!-- menus -->
+                            <div class="hidden sm:ml-6 sm:block">
+                                <div class="flex space-x-4">
+                                    <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Dashboard</a>
+                                    <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Menu</a>
+                                    <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Menu</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        <!-- (fim) navbar -->
+
+        <!-- título -->
+        <h1 class="text-3xl text-gray-900 font-bold flex justify-center items-center mt-8">
+           Gerador de Senha
+        </h1>
+
+        <!-- funções -->
+            <div class="flex justify-center items-center space-x-4 mt-10 mb-10">
+                <button type="button" id="gerarSenhaComumBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Gerar Senha Comum
+                </button>
+
+                <button type="button" id="gerarSenhaEspecialBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Gerar Senha Especial
+                </button>
+
+                <button type="button" id="removerSenhaComumBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Atender Comum
+                </button>
+
+                <button type="button" id="removerSenhaEspecialBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Atender Especial
+                </button>
+            </div>
+        <!-- (Fim) funções -->
+
+        <!-- table -->
+            <div class="flex justify-center items-center mt-10 mb-10">
+                <table class="table-auto border-slate-300 px-4 py-2 w-1/2">
+                    <thead>
+                        <tr>
+                            <th class="border bg-slate-300 px-4 py-2">Estado da Fila</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="filaSenhas"></tbody>
+                </table>
+            </div>
+        <!-- (Fim) table -->
+
+        <!-- link js -->
+        <script src="script.js"></script>
+    </body>
+</html>
