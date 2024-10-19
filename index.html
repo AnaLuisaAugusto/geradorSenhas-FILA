@@ -7,6 +7,8 @@
         <!-- link tailwindcss -->
         <script src="https://cdn.tailwindcss.com"></script>
 
+        <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+        
         <!-- link ionicons -->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -39,46 +41,39 @@
             </nav>
         <!-- (fim) navbar -->
 
-        <!-- título -->
-        <h1 class="text-3xl text-gray-900 font-bold flex justify-center items-center mt-8">
-           Gerador de Senha
-        </h1>
-
-        <!-- funções -->
-            <div class="flex justify-center items-center space-x-4 mt-10 mb-10">
-                <button type="button" id="gerarSenhaComumBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        
+        <div id="app" class="container mx-auto p-4">
+            <h1 class="text-3xl font-bold mb-5 text-center" style="margin: 8vh 0;">Gerador de Senha</h1>
+        
+            <div class="mb-4 flex justify-center gap-4">
+                <button @click="gerarSenhaComum" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     Gerar Senha Comum
                 </button>
-
-                <button type="button" id="gerarSenhaEspecialBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <button @click="gerarSenhaEspecial" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                     Gerar Senha Especial
                 </button>
-
-                <button type="button" id="removerSenhaComumBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Atender Comum
+                <button @click="removerSenhaComum" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                    Atender Comum
                 </button>
-
-                <button type="button" id="removerSenhaEspecialBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <button @click="removerSenhaEspecial" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                     Atender Especial
                 </button>
             </div>
-        <!-- (Fim) funções -->
-
-        <!-- table -->
-            <div class="flex justify-center items-center mt-10 mb-10">
-                <table class="table-auto border-slate-300 px-4 py-2 w-1/2">
-                    <thead>
-                        <tr>
-                            <th class="border bg-slate-300 px-4 py-2">Estado da Fila</th>
-                        </tr>
-                    </thead>
-
-                    <tbody id="filaSenhas"></tbody>
-                </table>
-            </div>
-        <!-- (Fim) table -->
-
-        <!-- link js -->
-        <script src="script.js"></script>
+        
+            <table class="table-auto border-collapse border border-gray-300 w-full">
+                <thead>
+                    <tr>
+                        <th class="border px-4 py-2">Estado da Fila</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="senha in filaSenhas" :key="senha">
+                        <td class="border px-4 py-2 text-center">{{ senha }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <script src="app.js"></script>
     </body>
 </html>
